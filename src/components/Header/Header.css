@@ -2,5 +2,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: cadetblue;
+  margin-bottom: 12px;
+}
+
+.header__title {
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.header__virusimage {
+  height: 0.68em;
+}
+
+.header__info {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .header__virusimage {
+    animation: virus-spin infinite 20s linear;
+  }
+}
+
+@keyframes virus-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

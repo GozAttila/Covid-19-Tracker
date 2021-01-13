@@ -2,11 +2,19 @@ import React from "react";
 
 import "./Header.css";
 
+import CovidImage from "../../assets/covid19.png";
+
 function Header() {
   return (
     <div className="header">
-      <div className="header__title">Covid-19 Tracker Header</div>
-      <div>Info</div>
+      <div className="header__title">
+        C
+        <img src={CovidImage} className="header__virusimage" alt="virus" />
+        vid-19 Tracker
+      </div>
+      <div className="header__info" onClick={() => console.log("clicked")}>
+        Info
+      </div>
     </div>
   );
 }
