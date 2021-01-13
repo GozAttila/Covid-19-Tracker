@@ -1,0 +1,15 @@
+.mapList {
+  display: flex;
+  justify-content: space-between;
+  background-color: burlywood;
+}
+
+.mapList__left {
+  flex: 0.85;
+  background-color: cornflowerblue;
+}
+
+.mapList__right {
+  flex: 0.15;
+  background-color: lightgray;
+}

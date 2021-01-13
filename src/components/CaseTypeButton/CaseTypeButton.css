@@ -1,0 +1,20 @@
+.caseTypeButton {
+  border: 2px solid gray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: lightgray;
+}
+
+.indicator {
+  height: 0.75rem;
+  width: 0.75rem;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: chartreuse;
+}
