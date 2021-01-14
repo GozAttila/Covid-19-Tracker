@@ -1,0 +1,64 @@
+.tooltip {
+  width: 160px;
+  background-color: rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px;
+  color: aliceblue;
+}
+
+.tooltip__flag {
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.tooltip__header,
+.tooltip__data,
+.tooltip__country,
+.tooltip__population {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tooltip__header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tooltip__country {
+  margin-bottom: 4px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.tooltip__population {
+  margin-bottom: 4px;
+}
+
+.tooltip__data {
+  height: 100%;
+  margin: 6px 0;
+}
+
+.tooltip__title {
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.tooltip__cases {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
