@@ -12,4 +12,9 @@
 .mapList__right {
   flex: 0.15;
   background-color: lightgray;
+  margin-left: 8px;
+  overflow-y: scroll;
+  height: 530px;
+  padding: 4px;
+  border-radius: 10px;
 }

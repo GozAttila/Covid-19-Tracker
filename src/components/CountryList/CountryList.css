@@ -1,0 +1,14 @@
+.countryList tr {
+  display: flex;
+  justify-content: space-between;
+  background-color: #c3c3c3;
+}
+
+.countryList td {
+  padding: 0.5rem;
+  border: none;
+}
+
+.countryList tr:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
