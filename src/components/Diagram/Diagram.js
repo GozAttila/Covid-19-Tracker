@@ -110,28 +110,30 @@ function Diagram({ countryCode }) {
 
   return (
     <div className="diagram">
-      {loadingState ? (
-        <h2 className="loading diagram__loading">Loading...</h2>
-      ) : noDataState ? (
-        <div className="loading diagram__loading warning">
-          No historical data found
-          <br />
-          Please, check the info
-        </div>
-      ) : (
-        <Graph
-          className="diagram__graph"
-          graphData={graphData}
-          buttonStatus={buttonStatus}
-        />
-      )}
+      <div className="diagram__container">
+        {loadingState ? (
+          <h2 className="loading diagram__loading">Loading...</h2>
+        ) : noDataState ? (
+          <div className="loading diagram__loading warning">
+            No historical data found
+            <br />
+            Please, check the info
+          </div>
+        ) : (
+          <Graph
+            className="diagram__graph"
+            graphData={graphData}
+            buttonStatus={buttonStatus}
+          />
+        )}
 
-      <div className="diagram__buttons">
-        <ButtonList
-          caseTypeButtonList={caseTypeButtonList}
-          buttonHandler={buttonHandler}
-          buttonType="sideButton"
-        />
+        <div className="diagram__buttons">
+          <ButtonList
+            caseTypeButtonList={caseTypeButtonList}
+            buttonHandler={buttonHandler}
+            buttonType="sideButton"
+          />
+        </div>
       </div>
     </div>
   );

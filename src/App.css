@@ -24,3 +24,7 @@ body {
   justify-content: center;
   color: #00ff00;
 }
+
+.warning {
+  color: #b22222;
+}

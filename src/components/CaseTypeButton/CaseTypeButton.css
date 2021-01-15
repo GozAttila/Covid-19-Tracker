@@ -35,3 +35,25 @@
 .sideButton {
   width: 137px;
 }
+
+@media (max-width: 1180px) {
+  .sideButton {
+    padding: 4px 8px;
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .topButton {
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  .topButton,
+  .sideButton {
+    font-size: 14px;
+  }
+}

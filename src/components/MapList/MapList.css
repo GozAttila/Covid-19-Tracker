@@ -9,10 +9,20 @@
 
 .mapList__right {
   flex: 0.15;
-  background-color: lightgray;
+  background-color: #d3d3d3;
   margin-left: 8px;
   overflow-y: scroll;
   height: 530px;
   padding: 4px;
   border-radius: 10px;
+}
+
+@media (max-width: 1330px) {
+  .mapList__left {
+    flex: 1;
+  }
+
+  .mapList__right {
+    display: none;
+  }
 }
