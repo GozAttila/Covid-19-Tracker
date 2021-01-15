@@ -177,6 +177,10 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
         }
       );
 
+      worldMapRef.current.backgroundSeries.events.on("hit", function (e) {
+        clearSelectedCountry();
+      });
+
       const clearSelectedCountry = () => {
         if (currentPolygon !== undefined) {
           currentPolygon.isActive = false;
