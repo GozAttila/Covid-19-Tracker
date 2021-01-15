@@ -31,3 +31,7 @@
 .notActive {
   background-color: #ff4400;
 }
+
+.sideButton {
+  width: 137px;
+}

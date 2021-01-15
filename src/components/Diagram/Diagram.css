@@ -2,12 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: coral;
   margin-top: 8px;
   height: 295px;
 }
 
-.diagram__graph {
+.diagram__graph,
+.diagram__loading {
   width: 100%;
   height: 100%;
+}
+
+.diagram__buttons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 140px;
+  margin-left: 8px;
+}
+
+.diagram__loading {
+  padding: 0;
+  margin: 0;
 }

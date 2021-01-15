@@ -11,7 +11,13 @@ import Tooltip from "../Tooltip/Tooltip";
 
 const { useRef } = React;
 
-function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
+function WorldMap({
+  worldData,
+  mapCountries,
+  caseType,
+  perCapita,
+  countryCodeCallBack,
+}) {
   const worldMapRef = useRef(null);
 
   const worldInfo = {
@@ -189,6 +195,7 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
         countryLocked = false;
         if (outOfCountries) {
           setTooltipData(worldInfo);
+          countryCodeCallBack("Worldwide");
         }
       };
 
@@ -204,6 +211,7 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
           polygon.isActive = false;
         });
         currentPolygon.isActive = true;
+        countryCodeCallBack(currentPolygon.dataItem.dataContext.id);
         countryLocked = true;
         tooltipChange(mapPolygon);
       }
