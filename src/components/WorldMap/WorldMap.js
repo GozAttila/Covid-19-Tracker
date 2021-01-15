@@ -59,7 +59,7 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
       // to avoid instant update
       worldMapRef.current.dummyData = false;
 
-      const polygonSeries = worldMapRef.current.series.push(
+      let polygonSeries = worldMapRef.current.series.push(
         new am4maps.MapPolygonSeries()
       );
 
@@ -75,6 +75,7 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
       polygonSeries.calculateVisualCenter = true;
 
       let polygonSeriesData = [];
+      console.log("polygonSeriesData", polygonSeriesData);
       if (polygonSeriesData.length === 0) {
         mapCountries.map((country) => {
           polygonSeriesData.push({
@@ -141,7 +142,6 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
         outOfCountries = false;
         if (!countryLocked) {
           if (mapPolygon.dataItem.dataContext.madeFromGeoData === true) {
-            console.log("In madefromgeodata part");
             setTooltipData({
               flag: `https://www.countryflags.io/${mapPolygon.dataItem.dataContext.id}/flat/64.png`,
               country: mapPolygon.dataItem.dataContext.name,
@@ -209,6 +209,27 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
       worldMapRef.current && worldMapRef.current.dispose();
     };
   }, []);
+
+  useEffect(() => {
+    if (worldMapRef.current && worldMapRef.current.dummyData) {
+      let maxValue = 0;
+      let polygonSeries = worldMapRef.current.series.values[0];
+
+      polygonSeries.mapPolygons.each(function (item) {
+        let newValue = item.dataItem.dataContext[caseType];
+
+        item.dataItem.value = newValue;
+        if (maxValue < newValue) {
+          maxValue = newValue;
+        }
+      });
+
+      polygonSeries.heatRules.getIndex(0).maxValue = maxValue;
+      polygonSeries.heatRules.getIndex(0).max = colors[caseType];
+    }
+
+    worldMapRef.current.dummyData = true;
+  }, [caseType, perCapita]);
 
   return (
     <>
