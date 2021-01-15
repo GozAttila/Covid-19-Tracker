@@ -8,13 +8,25 @@
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 400;
-  background-color: lightgray;
+  background-color: #d3d3d3;
+  transition: all 0.3s;
+}
+
+.caseTypeButton:hover {
+  border: 2px solid #464646;
 }
 
 .indicator {
   height: 0.75rem;
   width: 0.75rem;
-  border: 1px solid gray;
+  border: 1px solid #808080;
   border-radius: 50%;
-  background-color: chartreuse;
+}
+
+.isActive {
+  background-color: #7fff00;
+}
+
+.notActive {
+  background-color: #ff4400;
 }

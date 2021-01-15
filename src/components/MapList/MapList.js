@@ -36,10 +36,21 @@ function MapList() {
     getWorldData();
   }, []);
 
+  const buttonHandler = (buttonCaseType) => {
+    if (buttonCaseType !== caseType) {
+      setCaseType(buttonCaseType);
+    }
+  };
+
   return (
     <div className="mapList">
       <div className="mapList__left">
-        <TopButtons />
+        <TopButtons
+          caseType={caseType}
+          perCapita={perCapita}
+          buttonHandler={buttonHandler}
+          setPerCapita={setPerCapita}
+        />
         <WorldMap
           worldData={worldData}
           mapCountries={mapCountries}

@@ -1,10 +1,24 @@
 import React from "react";
+
 import CaseTypeButton from "../CaseTypeButton/CaseTypeButton";
 
-function ButtonList() {
+function ButtonList({ caseTypeButtonList, buttonHandler, buttonType }) {
   return (
     <>
-      <CaseTypeButton />
+      {caseTypeButtonList.map((button) => (
+        <div
+          key={`${buttonType}-${button.buttonName}`}
+          onClick={() => {
+            buttonHandler(button.caseType);
+          }}
+        >
+          <CaseTypeButton
+            isActive={button.isActive}
+            buttonName={button.buttonName}
+            buttonType={buttonType}
+          />
+        </div>
+      ))}
     </>
   );
 }

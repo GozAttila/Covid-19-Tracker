@@ -2,12 +2,12 @@ import React from "react";
 
 import "./CaseTypeButton.css";
 
-function CaseTypeButton() {
+function CaseTypeButton({ isActive, buttonName, buttonType }) {
   return (
-    <div className="caseTypeButton">
-      <div>Buttonname</div>
-      <div className="indicator"></div>
-    </div>
+    <button className={`caseTypeButton ${buttonType}`}>
+      <div>{buttonName}</div>
+      <div className={`indicator ${isActive ? "isActive" : "notActive"}`}></div>
+    </button>
   );
 }
 
