@@ -64,7 +64,7 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
       );
 
       polygonSeries.heatRules.push({
-        porperty: "fill",
+        property: "fill",
         target: polygonSeries.mapPolygons.template,
         min: countryColor,
         max: casesColor,
@@ -75,7 +75,6 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
       polygonSeries.calculateVisualCenter = true;
 
       let polygonSeriesData = [];
-      console.log("polygonSeriesData", polygonSeriesData);
       if (polygonSeriesData.length === 0) {
         mapCountries.map((country) => {
           polygonSeriesData.push({
@@ -217,6 +216,14 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
 
       polygonSeries.mapPolygons.each(function (item) {
         let newValue = item.dataItem.dataContext[caseType];
+        if (perCapita) {
+          let population = item.dataItem.dataContext["population"];
+
+          newValue =
+            population === 0
+              ? 0
+              : Math.round(newValue / (population / 1000000));
+        }
 
         item.dataItem.value = newValue;
         if (maxValue < newValue) {
@@ -233,7 +240,7 @@ function WorldMap({ worldData, mapCountries, caseType, perCapita }) {
 
   return (
     <>
-      <div id="map">WorldMap</div>
+      <div id="map"></div>
       <Tooltip tooltipData={tooltipData} />
     </>
   );

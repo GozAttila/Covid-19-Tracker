@@ -29,8 +29,6 @@ function TopButtons({ caseType, perCapita, buttonHandler, setPerCapita }) {
     },
   ];
 
-  console.log("caseTypeButtonList in topButtons", caseTypeButtonList);
-
   return (
     <div className="topButtons">
       <ButtonList

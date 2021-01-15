@@ -12,7 +12,7 @@ function App() {
       {/* <div>InfoModal</div> */}
       <Header />
       <MapList />
-      <Diagram />
+      {/* <Diagram /> */}
     </div>
   );
 }

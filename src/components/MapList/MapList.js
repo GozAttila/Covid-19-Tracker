@@ -51,12 +51,16 @@ function MapList() {
           buttonHandler={buttonHandler}
           setPerCapita={setPerCapita}
         />
-        <WorldMap
-          worldData={worldData}
-          mapCountries={mapCountries}
-          caseType={caseType}
-          perCapita={perCapita}
-        />
+        {mapCountries.length > 0 && worldData.updated ? (
+          <WorldMap
+            worldData={worldData}
+            mapCountries={mapCountries}
+            caseType={caseType}
+            perCapita={perCapita}
+          />
+        ) : (
+          <h2 className="loading">Loading...</h2>
+        )}
       </div>
       <div className="mapList__right">
         <CountryList
