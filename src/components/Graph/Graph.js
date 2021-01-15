@@ -65,7 +65,7 @@ function Graph({ graphData, buttonStatus }) {
 
       const createSeries = (data) => {
         const series = chartRef.current.series.push(new am4charts.LineSeries());
-        series.name = data.name;
+        series.name = data.text;
         series.dataFields.dateX = "date";
         series.dataFields.valueY = data.name;
         series.tooltipText = "{valueY.value}";

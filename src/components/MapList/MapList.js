@@ -6,7 +6,7 @@ import CountryList from "../CountryList/CountryList";
 import TopButtons from "../TopButtons/TopButtons";
 import WorldMap from "../WorldMap/WorldMap";
 
-function MapList() {
+function MapList({ countryCodeCallBack }) {
   const [mapCountries, setMapCountries] = useState([]);
   const [worldData, setWorldData] = useState({});
   const [perCapita, setPerCapita] = useState(false);
@@ -57,6 +57,7 @@ function MapList() {
             mapCountries={mapCountries}
             caseType={caseType}
             perCapita={perCapita}
+            countryCodeCallBack={countryCodeCallBack}
           />
         ) : (
           <h2 className="loading">Loading...</h2>
