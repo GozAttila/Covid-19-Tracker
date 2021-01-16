@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./App.css";
 import Diagram from "./components/Diagram/Diagram";
+import Footer from "./components/Footer/Footer";
 
 import Header from "./components/Header/Header";
 import MapList from "./components/MapList/MapList";
@@ -19,6 +20,7 @@ function App() {
       <Header />
       <MapList countryCodeCallBack={countryCodeCallBack} />
       <Diagram countryCode={countryCode} />
+      <Footer />
     </div>
   );
 }
