@@ -4,7 +4,7 @@ import "./Header.css";
 
 import CovidImage from "../../assets/covid19.png";
 
-function Header() {
+function Header({ changeModalDisplay }) {
   return (
     <div className="header">
       <div className="header__title">
@@ -12,7 +12,7 @@ function Header() {
         <img src={CovidImage} className="header__virusimage" alt="virus" />
         vid-19 Tracker
       </div>
-      <div className="header__info" onClick={() => console.log("clicked")}>
+      <div className="header__info" onClick={() => changeModalDisplay(1)}>
         Info
       </div>
     </div>

@@ -10,7 +10,11 @@ function Footer() {
       <div className="footer__left">
         <div>Created by Gőz Attila</div>
         <div>
-          <a href="https://www.linkedin.com/in/ati-goz/">
+          <a
+            href="https://www.linkedin.com/in/ati-goz/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={linkedinIcon} alt="linkedin" />
           </a>
         </div>

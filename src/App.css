@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0 20px;
+  min-width: 630px;
 }
 
 .loading {
